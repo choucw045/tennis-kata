@@ -16,6 +16,13 @@ public class Tests
         ScoreShouldBe("Love All");
     }
 
+    [Test]
+    public void FifteenLove()
+    {
+        _tennisGame.FirstPlayerScore();
+        ScoreShouldBe("Fifteen Love");
+    }
+
     private void ScoreShouldBe(string expected)
     {
         _tennisGame.GetScore().Should().Be(expected);
