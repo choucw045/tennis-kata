@@ -19,31 +19,44 @@ public class Tests
     [Test]
     public void FifteenLove()
     {
-        GivenScore(1);
+        GivenScore(1, Player1);
         ScoreShouldBe("Fifteen Love");
     }
 
     [Test]
     public void ThirtyLove()
     {
-        GivenScore(2);
+        GivenScore(2, Player1);
         ScoreShouldBe("Thirty Love");
     }
 
     [Test]
     public void FortyLove()
     {
-        GivenScore(3);
+        GivenScore(3, Player1);
         ScoreShouldBe("Forty Love");
     }
 
-    private void GivenScore(int score)
+    [Test]
+    public void LoveFifteen()
+    {
+        GivenScore(1, Player2);
+        ScoreShouldBe("Love Fifteen");
+    }
+
+    private const string Player2 = "Alice";
+
+    private void GivenScore(int score, string playerName)
     {
         for (var i = 0; i < score; i++)
         {
-            _tennisGame.FirstPlayerScore();
+            if (playerName == Player1)
+                _tennisGame.FirstPlayerScore();
+            else throw new NotSupportedException();
         }
     }
+
+    private const string Player1 = "Bob";
 
 
     private void ScoreShouldBe(string expected)
