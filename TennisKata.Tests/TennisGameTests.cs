@@ -54,9 +54,14 @@ public class Tests
     [Test]
     public void FifteenAll()
     {
-        GivenScore(1, Player1);
-        GivenScore(1, Player2);
+        GivenAll(1);
         ScoreShouldBe("Fifteen All");
+    }
+
+    private void GivenAll(int score)
+    {
+        GivenScore(score, Player1);
+        GivenScore(score, Player2);
     }
 
 

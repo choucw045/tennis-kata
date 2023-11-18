@@ -24,18 +24,14 @@ public class TennisGame
 
     public string GetScore()
     {
-        if (_firstPlayerCurrentScore > 0 || _secondPlayerCurrentScore > 0)
-        {
-            var score1 = GetScoreDesc(_firstPlayerCurrentScore);
-            var score2 = GetScoreDesc(_secondPlayerCurrentScore);
-            if (_firstPlayerCurrentScore == _secondPlayerCurrentScore)
-            {
-                return $"{score2} All";
-            }
-            return $"{score1} {score2}";
-        }
+        var score1 = GetScoreDesc(_firstPlayerCurrentScore);
+        var score2 = GetScoreDesc(_secondPlayerCurrentScore);
+        return IsSameScore() ? $"{score2} All" : $"{score1} {score2}";
+    }
 
-        return "Love All";
+    private bool IsSameScore()
+    {
+        return _firstPlayerCurrentScore == _secondPlayerCurrentScore;
     }
 
     private static string GetScoreDesc(int score)
