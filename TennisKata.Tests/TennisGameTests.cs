@@ -96,6 +96,13 @@ public class Tests
         ScoreShouldBe($"{Player2} Win");
     }
 
+    [Test]
+    public void SecondPlayerWinWithoutDeuce()
+    {
+        GivenScore(4, Player2);
+        ScoreShouldBe($"{Player2} Win");
+    }
+
 
     private void GivenDeuce()
     {

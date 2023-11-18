@@ -30,6 +30,9 @@ public class TennisGame
             return GetDeuceScore();
         }
 
+        if (_firstPlayerCurrentScore >= 4 || _secondPlayerCurrentScore >= 4)
+            return $"{GetLeadPlayer()} Win";
+
         var score1 = GetScoreDesc(_firstPlayerCurrentScore);
         var score2 = GetScoreDesc(_secondPlayerCurrentScore);
         return IsSameScore() ? $"{score2} All" : $"{score1} {score2}";
