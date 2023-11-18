@@ -44,6 +44,13 @@ public class Tests
         ScoreShouldBe("Love Fifteen");
     }
 
+    [Test]
+    public void LoveThirty()
+    {
+        GivenScore(2, Player2);
+        ScoreShouldBe("Love Thirty");
+    }
+
     private const string Player2 = "Alice";
 
     private void GivenScore(int score, string playerName)
