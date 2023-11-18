@@ -58,6 +58,13 @@ public class Tests
         ScoreShouldBe("Fifteen All");
     }
 
+    [Test]
+    public void ThirtyAll()
+    {
+        GivenAll(2);
+        ScoreShouldBe("Thirty All");
+    }
+
     private void GivenAll(int score)
     {
         GivenScore(score, Player1);
