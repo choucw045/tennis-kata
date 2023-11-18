@@ -42,12 +42,12 @@ public class TennisGame
             return "Deuce";
         }
 
-        if (Math.Abs(_firstPlayerCurrentScore - _secondPlayerCurrentScore) == 1)
-        {
-            return $"{GetLeadPlayer()} Adv";
-        }
+        return IsAdv() ? $"{GetLeadPlayer()} Adv" : $"{GetLeadPlayer()} Win";
+    }
 
-        return $"{GetLeadPlayer()} Win";
+    private bool IsAdv()
+    {
+        return Math.Abs(_firstPlayerCurrentScore - _secondPlayerCurrentScore) == 1;
     }
 
     private string GetLeadPlayer()
