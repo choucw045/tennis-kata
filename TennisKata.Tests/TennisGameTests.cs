@@ -52,6 +52,8 @@ public class Tests
         {
             if (playerName == Player1)
                 _tennisGame.FirstPlayerScore();
+            else if (playerName == Player2)
+                _tennisGame.SecondPlayerScore();
             else throw new NotSupportedException();
         }
     }
