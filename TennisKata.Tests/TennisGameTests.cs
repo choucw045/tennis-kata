@@ -30,6 +30,13 @@ public class Tests
         ScoreShouldBe("Thirty Love");
     }
 
+    [Test]
+    public void FortyLove()
+    {
+        GivenScore(3);
+        ScoreShouldBe("Forty Love");
+    }
+
     private void GivenScore(int score)
     {
         for (var i = 0; i < score; i++)
