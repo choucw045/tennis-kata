@@ -32,12 +32,23 @@ public class TennisGame
                 return "Deuce";
             }
 
-            return $"{_firstPlayerName} Adv";
+            var leadPlayer = GetLeadPlayer();
+            return $"{leadPlayer} Adv";
         }
 
         var score1 = GetScoreDesc(_firstPlayerCurrentScore);
         var score2 = GetScoreDesc(_secondPlayerCurrentScore);
         return IsSameScore() ? $"{score2} All" : $"{score1} {score2}";
+    }
+
+    private string GetLeadPlayer()
+    {
+        if (_firstPlayerCurrentScore > _secondPlayerCurrentScore)
+        {
+            return _firstPlayerName;
+        }
+
+        return _secondPlayerName;
     }
 
     private bool IsSameScore()
