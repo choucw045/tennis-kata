@@ -15,3 +15,7 @@ Finish each tests that `GetScore()` can show these score.
 - FirstPlayer Adv
 - SecondPlayer Adv
 - SecondPlayer Win
+
+## Result
+23:20
+With a state, I got a better piece of code
