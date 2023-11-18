@@ -19,16 +19,23 @@ public class Tests
     [Test]
     public void FifteenLove()
     {
-        _tennisGame.FirstPlayerScore();
+        GivenScore(1);
         ScoreShouldBe("Fifteen Love");
     }
 
     [Test]
     public void ThirtyLove()
     {
-        _tennisGame.FirstPlayerScore();
-        _tennisGame.FirstPlayerScore();
+        GivenScore(2);
         ScoreShouldBe("Thirty Love");
+    }
+
+    private void GivenScore(int score)
+    {
+        for (var i = 0; i < score; i++)
+        {
+            _tennisGame.FirstPlayerScore();
+        }
     }
 
 
