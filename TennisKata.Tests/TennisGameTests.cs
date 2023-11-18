@@ -68,8 +68,21 @@ public class Tests
     [Test]
     public void Deuce()
     {
-        GivenAll(3);
+        GivenDeuce();
         ScoreShouldBe("Deuce");
+    }
+
+    [Test]
+    public void FirstPlayerAdv()
+    {
+        GivenDeuce();
+        GivenScore(1, Player1);
+        ScoreShouldBe($"{Player1} Adv");
+    }
+
+    private void GivenDeuce()
+    {
+        GivenAll(3);
     }
 
 

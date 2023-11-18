@@ -26,7 +26,15 @@ public class TennisGame
     public string GetScore()
     {
         if (_deuce)
-            return "Deuce";
+        {
+            if (IsSameScore())
+            {
+                return "Deuce";
+            }
+
+            return $"{_firstPlayerName} Adv";
+        }
+
         var score1 = GetScoreDesc(_firstPlayerCurrentScore);
         var score2 = GetScoreDesc(_secondPlayerCurrentScore);
         return IsSameScore() ? $"{score2} All" : $"{score1} {score2}";
@@ -60,6 +68,11 @@ public class TennisGame
             SecondPlayerScore();
         else throw new NotSupportedException();
 
+        CheckDeuce();
+    }
+
+    private void CheckDeuce()
+    {
         if (_firstPlayerCurrentScore == _secondPlayerCurrentScore && _firstPlayerCurrentScore == 3)
         {
             _deuce = true;
