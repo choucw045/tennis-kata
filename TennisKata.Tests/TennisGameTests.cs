@@ -51,6 +51,15 @@ public class Tests
         ScoreShouldBe("Love Thirty");
     }
 
+    [Test]
+    public void FifteenAll()
+    {
+        GivenScore(1, Player1);
+        GivenScore(1, Player2);
+        ScoreShouldBe("Fifteen All");
+    }
+
+
     private const string Player2 = "Alice";
 
     private void GivenScore(int score, string playerName)

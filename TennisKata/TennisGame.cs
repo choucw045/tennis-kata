@@ -28,6 +28,10 @@ public class TennisGame
         {
             var score1 = GetScoreDesc(_firstPlayerCurrentScore);
             var score2 = GetScoreDesc(_secondPlayerCurrentScore);
+            if (_firstPlayerCurrentScore == _secondPlayerCurrentScore)
+            {
+                return $"{score2} All";
+            }
             return $"{score1} {score2}";
         }
 
