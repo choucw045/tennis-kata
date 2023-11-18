@@ -88,6 +88,14 @@ public class Tests
         ScoreShouldBe($"{Player2} Adv");
     }
 
+    [Test]
+    public void SecondPlayerWin()
+    {
+        GivenDeuce();
+        GivenScore(2, Player2);
+        ScoreShouldBe($"{Player2} Win");
+    }
+
 
     private void GivenDeuce()
     {

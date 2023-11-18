@@ -27,13 +27,7 @@ public class TennisGame
     {
         if (_deuce)
         {
-            if (IsSameScore())
-            {
-                return "Deuce";
-            }
-
-            var leadPlayer = GetLeadPlayer();
-            return $"{leadPlayer} Adv";
+            return GetDeuceScore();
         }
 
         var score1 = GetScoreDesc(_firstPlayerCurrentScore);
@@ -41,14 +35,24 @@ public class TennisGame
         return IsSameScore() ? $"{score2} All" : $"{score1} {score2}";
     }
 
-    private string GetLeadPlayer()
+    private string GetDeuceScore()
     {
-        if (_firstPlayerCurrentScore > _secondPlayerCurrentScore)
+        if (IsSameScore())
         {
-            return _firstPlayerName;
+            return "Deuce";
         }
 
-        return _secondPlayerName;
+        if (Math.Abs(_firstPlayerCurrentScore - _secondPlayerCurrentScore) == 1)
+        {
+            return $"{GetLeadPlayer()} Adv";
+        }
+
+        return $"{GetLeadPlayer()} Win";
+    }
+
+    private string GetLeadPlayer()
+    {
+        return _firstPlayerCurrentScore > _secondPlayerCurrentScore ? _firstPlayerName : _secondPlayerName;
     }
 
     private bool IsSameScore()
