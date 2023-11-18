@@ -15,3 +15,6 @@ Finish each tests that `GetScore()` can show these score.
 - FirstPlayer Adv
 - SecondPlayer Adv
 - SecondPlayer Win
+
+## Result
+32:33
