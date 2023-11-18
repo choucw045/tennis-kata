@@ -7,7 +7,7 @@ public class Tests
     [SetUp]
     public void Setup()
     {
-        _tennisGame = new TennisGame();
+        _tennisGame = new TennisGame(Player1, Player2);
     }
 
     [Test]
@@ -50,11 +50,7 @@ public class Tests
     {
         for (var i = 0; i < score; i++)
         {
-            if (playerName == Player1)
-                _tennisGame.FirstPlayerScore();
-            else if (playerName == Player2)
-                _tennisGame.SecondPlayerScore();
-            else throw new NotSupportedException();
+            _tennisGame.PlayerScore(playerName);
         }
     }
 

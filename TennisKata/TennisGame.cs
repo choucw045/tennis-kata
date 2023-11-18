@@ -13,6 +13,14 @@ public class TennisGame
     };
 
     private int _secondPlayerCurrentScore;
+    private readonly string _firstPlayerName;
+    private readonly string _secondPlayerName;
+
+    public TennisGame(string firstPlayerName, string secondPlayerName)
+    {
+        _firstPlayerName = firstPlayerName;
+        _secondPlayerName = secondPlayerName;
+    }
 
     public string GetScore()
     {
@@ -31,13 +39,22 @@ public class TennisGame
         return ScoreMap[score];
     }
 
-    public void FirstPlayerScore()
+    private void FirstPlayerScore()
     {
         _firstPlayerCurrentScore++;
     }
 
-    public void SecondPlayerScore()
+    private void SecondPlayerScore()
     {
         _secondPlayerCurrentScore++;
+    }
+
+    public void PlayerScore(string playerName)
+    {
+        if (playerName == _firstPlayerName)
+            FirstPlayerScore();
+        else if (playerName == _secondPlayerName)
+            SecondPlayerScore();
+        else throw new NotSupportedException();
     }
 }
