@@ -8,8 +8,9 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void LoveAll()
     {
-        Assert.Pass();
+        var tennisGame = new TennisGame();
+        tennisGame.GetScore().Should().Be("Love All");
     }
 }
