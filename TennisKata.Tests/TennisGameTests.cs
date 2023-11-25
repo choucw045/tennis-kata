@@ -7,7 +7,7 @@ public class Tests
     [SetUp]
     public void SetUp()
     {
-        _tennisGame = new();
+        _tennisGame = new(FirstPlayer);
     }
 
 
@@ -30,6 +30,23 @@ public class Tests
         GivenFirstPlayerScoreTimes(2);
         ScoreShouldBe("Thirty Love");
     }
+
+    [Test]
+    public void FortyLove()
+    {
+        GivenFirstPlayerScoreTimes(3);
+        ScoreShouldBe("Forty Love");
+    }
+
+    [Test]
+    public void FirstPlayerWin()
+    {
+        GivenFirstPlayerScoreTimes(4);
+        ScoreShouldBe($"{FirstPlayer} Win");
+    }
+
+    private const string FirstPlayer = "Bob";
+
 
     private void GivenFirstPlayerScoreTimes(int times)
     {
