@@ -12,12 +12,7 @@ public class TennisGame
 
     public string GetScore()
     {
-        if (_firstPlayerScoreTimes == 2)
-        {
-            return $"{_scoreMap[_firstPlayerScoreTimes]} Love";
-        }
-
-        if (_firstPlayerScoreTimes == 1)
+        if (_firstPlayerScoreTimes == 2 || _firstPlayerScoreTimes == 1)
         {
             return $"{_scoreMap[_firstPlayerScoreTimes]} Love";
         }
