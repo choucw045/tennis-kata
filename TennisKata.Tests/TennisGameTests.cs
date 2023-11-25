@@ -2,15 +2,16 @@ namespace TennisKata.Tests;
 
 public class Tests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
+    private readonly TennisGame _tennisGame = new TennisGame();
 
     [Test]
     public void LoveAll()
     {
-        var tennisGame = new TennisGame();
-        tennisGame.GetScore().Should().Be("Love All");
+        ScoreShouldBe("Love All");
+    }
+
+    private void ScoreShouldBe(string expected)
+    {
+        _tennisGame.GetScore().Should().Be(expected);
     }
 }
