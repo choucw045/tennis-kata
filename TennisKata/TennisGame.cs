@@ -6,6 +6,7 @@ public class TennisGame
 
     private Dictionary<int, string> _scoreMap = new()
     {
+        { 1, "Fifteen" },
         { 2, "Thirty" },
     };
 
@@ -18,7 +19,7 @@ public class TennisGame
 
         if (_firstPlayerScoreTimes == 1)
         {
-            return "Fifteen Love";
+            return $"{_scoreMap[_firstPlayerScoreTimes]} Love";
         }
 
         return "Love All";
